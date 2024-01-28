@@ -12,7 +12,7 @@ export function Home() {
       <div className="home">
           <Navbar/>
           <Routes>
-            <Route path='/' element={<Features type="movie"/>}></Route>
+            <Route path='/netflix' element={<Features type="movie"/>}></Route>
           </Routes>
           <section>
               <List />
