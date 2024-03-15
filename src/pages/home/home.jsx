@@ -17,7 +17,7 @@ export function Home() {
                 <div className="home">
                     <Navbar/>
                     <Routes>
-                        <Route path='/' element={<Features type="movie"/>}></Route>
+                        <Route path='/netflix-clone' element={<Features type="movie"/>}></Route>
                     </Routes>
                     <section className='movies'>
                         <List title='Agregados recientemente'/>

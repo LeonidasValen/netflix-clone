@@ -52,7 +52,7 @@ export function Navbar() {
         </div>
         <div className="right">
           <img className="imgicons" src={searchimg}alt="" />
-          <img className="imgicons" src="/icons/campana.png" alt="" />
+          <img className="imgicons" src="./icons/campana.png" alt="" />
 
           <div className="profile" onMouseEnter={handleProfileMouseEnter} onMouseLeave={handleProfileMouseLeave}>
             <img
