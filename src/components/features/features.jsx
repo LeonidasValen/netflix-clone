@@ -25,7 +25,7 @@ export function Features({type}) {
                 </select>
             </div>
         )}
-        <img className='poster' src="img/godofwar.png" alt="" />
+        <img className='poster' src="./img/godofwar.png" alt="" />
 
         <div className='info'>
             <img className='portada' src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/92554480-bde6-4f5c-9861-7022237da1ce/dfk2tpx-65d27247-cc75-48e8-b47a-036ca25e70d6.png/v1/fill/w_1024,h_265/god_of_war_lll_logo_by_brsbr_dfk2tpx-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjY1IiwicGF0aCI6IlwvZlwvOTI1NTQ0ODAtYmRlNi00ZjVjLTk4NjEtNzAyMjIzN2RhMWNlXC9kZmsydHB4LTY1ZDI3MjQ3LWNjNzUtNDhlOC1iNDdhLTAzNmNhMjVlNzBkNi5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.l49RjuKjwj8Ewc0In9pvN-jWAq0JFD86xdO_wu_3e5s" alt="" />

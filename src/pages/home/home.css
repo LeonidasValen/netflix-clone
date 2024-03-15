@@ -1,0 +1,10 @@
+.home{
+    background-color: var(--bgcl);
+}
+
+.movies{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+

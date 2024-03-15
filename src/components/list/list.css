@@ -6,7 +6,16 @@
 .list{
     width: 100%;
     margin-top: 10px;
-   
+    margin: 1.5vw 0;
+}
+.list:nth-child(1){
+    z-index: 3;
+}
+.list:nth-child(2){
+    z-index: 2;
+}
+.list:nth-child(3){
+    z-index: 1;
 }
 
 .listTitle{

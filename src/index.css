@@ -3,7 +3,7 @@
 :root{
   --white: #fff;
   --black: #000;
-  --bgcl: rgb(20, 20, 20);
+  --bgcl: #141414;
   --bgln: linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
 }
 

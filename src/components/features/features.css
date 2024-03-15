@@ -6,10 +6,20 @@
     background-position: top;
 }
 
+.featured::before{
+    background: linear-gradient(to top,var(--bgcl),transparent);
+    bottom: 0;
+    left: 0;
+    content: "";
+    position: absolute;
+    height: 30%;
+    width: 100%;
+}
+
 .featured .portada{
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .featured .poster{
@@ -21,7 +31,9 @@
 
 .info{
     width: 36%;
+    height: 80%;
     position: absolute;
+    top: 0;
     left: 4%;
     bottom: 35%;
     display: flex;
@@ -30,7 +42,7 @@
 }
 
 .info img{
-    height: 40px;
+    max-height: 120px;
 }
 
 .info .desc{
@@ -75,7 +87,7 @@
     margin-right: 10px;
 }
 
-.category{
+.featured .category{
     position: absolute;
     top: 80px;
     left: 4%;
@@ -85,7 +97,7 @@
     align-items: center;
 }
 
-.category select{
+.featured .category select{
     cursor: pointer;
     color: var(--white);
     background-color: var(--black);

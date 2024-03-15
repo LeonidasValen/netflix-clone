@@ -3,12 +3,119 @@
     width: 100%;
     height: 100%;
     cursor: pointer;
+    transition: all 0.1s linear;
+    position: relative;
+    transform: 0;
 }
 
-.listItem .portadaItem{
-    width: 100%;
-    height: 100%;
-    object-fit: cover  ;
-    border-radius: 5px;
+.listItem:hover{
+    transform: scale(1.5);
+    z-index: 5;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
+}
 
+.listItem .img-modal{
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    width: 100%;
+    padding: 28.2%;
+}
+.listItem .portadaItem{
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.listItem .info-modal{
+    display: none;
+    opacity: 0;
+}
+
+.listItem:hover .info-modal{
+    display: block;
+    opacity: 1;
+    background-color: #181818;
+    position: absolute;
+    width: 100%;
+    padding: 1em;
+    border-radius: 0 0 5px 5px;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
+}
+
+.listItem:hover .info-modal .buttons-modal{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+}
+.listItem:hover .info-modal .buttons-modal .firts-btn{
+    display: flex;
+}
+.listItem:hover .info-modal .buttons-modal .firts-btn button:nth-child(1){
+    background: #fff;
+}
+.listItem:hover .info-modal .buttons-modal .firts-btn button:nth-child(1):hover{
+    border-color: #d7d7d7;
+    background: #d7d7d7;
+}
+.listItem:hover .info-modal .buttons-modal button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgba(42,42,42,.6);
+    border: 2px solid hsla(0,0%,100%,.5);
+    margin: 0 2px;
+}
+.listItem:hover .info-modal .buttons-modal button:hover{
+    background-color:rgba(255, 255, 255, 0.1) ;
+    border-color: #fff;
+}
+.listItem:hover .info-modal .buttons-modal div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listItem:hover .info-modal .buttons-modal img{
+    height: 0.8rem;
+    width: 0.8rem;
+}
+.listItem:hover .info-modal .buttons-modal .second-btn img{
+    transform: rotate(90deg);
+    height: 0.6rem;
+    width: 0.6rem;
+}
+
+
+.data-modal{
+    color: #bcbcbc;
+    font-size: 13px;
+    margin: 0.8em 0;
+}
+
+.data-modal .data-number{
+    border: 1px solid hsla(0,0%,100%,.4);
+    padding: 0 0.4em;
+    white-space: nowrap;
+    margin-right: 0.5em;
+}
+
+.info-modal .category-modal{
+    display: flex;
+    flex-wrap: wrap;
+}
+.info-modal .category-modal .category{
+    display: flex;
+    padding-right: 0.5vw;
+}
+.info-modal .category-modal .category span{
+    font-size: 13px;
 }
