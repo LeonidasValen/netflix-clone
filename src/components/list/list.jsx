@@ -15,11 +15,13 @@ export function List({title}){
 
   //trae las peliculas
   const [movieList, setMovieList] = useState([]);
+  const [isDataLoaded, setIsDataLoaded] = useState(false);//controla que se hallan cargado los datos para evitar errores
 
   useEffect(() => {
     fetchMovies().then(data => {
       setMovieList(data);//guarda los datos tridos de la api
       generateRandom(data.length)//obiente la cantidad de arrays de la api
+      setIsDataLoaded(true);//si los datos cargaron bien pasa ser verdadero
 
     }).catch(error => {//error al traer la api
       console.error('Error fetching movies:', error);
@@ -29,7 +31,7 @@ export function List({title}){
   //random peliculas
   const [randomMovies, setRandomMovies] = useState([])
 
-  const generateRandom = (length) =>{
+  const generateRandom = length =>{
     const indices = [];
     while(indices.length < length){//genera un bucle hasta que el indice tenga la misma cantidad de arreglos que el paramentro
       const randomMovie = Math.floor(Math.random() * length)//genera numeros aleatorios
@@ -63,9 +65,9 @@ export function List({title}){
     prevArrow: <SamplePrevArrow />,
     responsive: [//responsive carrousel
       {
-        breakpoint: 1200,
+        breakpoint: 1400,
         settings: {
-          slidesToShow: 5,
+           slidesToShow: 5,
           slidesToScroll: 5,
           initialSlide: 0
         }
@@ -91,35 +93,38 @@ export function List({title}){
   
   return (
     <>
-    <div className="list">
-      <span className="listTitle">{title}</span>
-      <div className="wrapper" >
-      <Slider {...settings}>
-            {randomMovies.map((movie, index) => (
-              <div key={`item${index}`} className="container">
-                <ListItem
-                  key={`item${index}`}
-                  title={movieList[movie].title}
-                  age={movieList[movie].age}
-                  duration={movieList[movie].duration}
-                  categories={movieList[movie].categories}
-                  coverImage={movieList[movie].coverImage}
-                  description={movieList[movie].description}
-                  year={movieList[movie].year}
-                />
-              </div>
-            ))}
-          </Slider>
-        {/* <Slider {...settings}>
-            {Array(42).fill(null).map((_, index) => (
-              <div key={`items${index}`} className="container">
-                <ListItem key={`item${index}`} />
-              </div>
-            ))}
-          </Slider> */}
+    {isDataLoaded && (//renderisa el codigo cunado sea true
+      <div className="list">
+        <span className="listTitle">{title}</span>
+        <div className="wrapper" >
+        <Slider {...settings}>
+              {randomMovies.map((movie, index) => (
+                <div key={`item${index}`} className="container">
+                  <ListItem
+                    key={`item${index}`}
+                    title={movieList[movie].title}
+                    age={movieList[movie].age}
+                    duration={movieList[movie].duration}
+                    categories={movieList[movie].categories}
+                    coverImage={movieList[movie].coverImage}
+                    description={movieList[movie].description}
+                    year={movieList[movie].year}
+                  />
+                </div>
+              ))}
+            </Slider>
+          {/* <Slider {...settings}>
+              {Array(42).fill(null).map((_, index) => (
+                <div key={`items${index}`} className="container">
+                  <ListItem key={`item${index}`} />
+                </div>
+              ))}
+            </Slider> */}
+        </div>
       </div>
-    </div>
+    )};
     </>
+
   );
 }
 

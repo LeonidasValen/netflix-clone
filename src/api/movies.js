@@ -6,7 +6,7 @@ export async function fetchMovies() {
     setTimeout(() => {
       // Devolvemos el arreglo de películas
       resolve(movies);
-    }, 1000); // Simulando un retardo de 1 segundo
+    },0); // Simulando un retardo de 1 segundo
   });
 }
 
