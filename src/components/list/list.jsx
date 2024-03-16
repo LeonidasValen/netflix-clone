@@ -122,7 +122,7 @@ export function List({title}){
             </Slider> */}
         </div>
       </div>
-    )};
+    )}
     </>
 
   );
