@@ -31,9 +31,14 @@ export function Modal(){
                 <div className="data-container">
                     <div className="detail-data">
                         <div className="meta-data">
-                            <span className='data-year'>{year}</span>
-                            <span className='data-duration'>{duration}</span>
-                            <span className='data-number'>{age}</span>
+                            <div className="firt-data">
+                                <span className='data-year'>{year}</span>
+                                <span className='data-duration'>{duration}</span>
+                                <span className='data-number'>{age}</span>
+                            </div>
+                            <div className="second-data">
+                                <span className='data-categories'>{categories.join(', ')}</span>
+                            </div>
                         </div>
                         <div className="description-data">
                             <span className="description-modal">{description}</span>

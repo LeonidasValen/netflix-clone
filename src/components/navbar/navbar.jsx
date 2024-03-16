@@ -1,11 +1,31 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
 
-import searchimg from '/icons/busqueda.png'
 
 export function Navbar() {
 
+  const [showSearch, setShowSearch] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+        if (!event.target.closest('.search-content')) {
+            setShowSearch(false);
+        }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+        document.removeEventListener('click', handleClickOutside);
+    };
+}, []);
+
+const toggleSearch = () => {
+    setShowSearch(!showSearch);
+};
+
+  //diseño del scroll
   const [isScrolled, setIsScrolled] = useState(false);
 
   const [isProfileHovered, setProfileHovered] = useState(false);
@@ -51,8 +71,11 @@ export function Navbar() {
           </ul>
         </div>
         <div className="right">
-          <img className="imgicons" src={searchimg}alt="" />
-          <img className="imgicons" src="./icons/campana.png" alt="" />
+          <div className={`search-content ${showSearch ? 'show-search' : ''}`}>
+            <button className='btn-search' onClick={toggleSearch}><img className="imgicons" src="./icons/busqueda.png" alt="buscador" /></button>
+            <input className='seacrh-input' type="text" placeholder='Títulos, persona, géneros'/>
+          </div>
+          <img className="imgicons" src="./icons/campana.png" alt="notificaciones" style={{marginRight:"15px"}}/>
 
           <div className="profile" onMouseEnter={handleProfileMouseEnter} onMouseLeave={handleProfileMouseLeave}>
             <img

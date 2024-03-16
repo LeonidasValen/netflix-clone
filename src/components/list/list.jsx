@@ -63,7 +63,7 @@ export function List({title}){
     prevArrow: <SamplePrevArrow />,
     responsive: [//responsive carrousel
       {
-        breakpoint: 1400,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 5,
           slidesToScroll: 5,

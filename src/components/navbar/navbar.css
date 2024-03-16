@@ -51,10 +51,61 @@
     align-items: center;
 }
 .navbar .container .right .imgicons{
-    margin-right: 15px;
     height: 24px;
     width: 24px;
+    cursor: pointer;
 }
+
+.navbar .container .right .search-content{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 15px;
+    height: 36px; 
+    width: 32px;
+    overflow: hidden;
+    transition: width 0.5s cubic-bezier(0.9, 0, 0.3, 0.9);
+}
+.navbar .container .right .search-content .btn-search{
+    position: relative;
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+}
+.navbar .container .right .search-content .seacrh-input{
+    background: transparent;
+    position: relative;
+    outline: none;
+    color: var(--white);
+    border: 0;
+    font-size: 15px;
+    width: 100% ;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s;
+    margin-left: 6px;
+    margin-right: 15px;
+}
+
+/*search animated*/
+.navbar .container .right .search-content.show-search{
+    background: #000000b8;
+    border: 1px solid var(--white);
+    width: 100%;
+}
+.navbar .container .right .search-content.show-search .seacrh-input{
+    opacity: 1;
+    pointer-events: initial;
+}
+@media screen and (min-width: 576px) {
+    .navbar .container .right .search-content.show-search {
+      width: 270px;
+    }
+  }
 
 .navbar .container .right .profile{
     display: flex;
