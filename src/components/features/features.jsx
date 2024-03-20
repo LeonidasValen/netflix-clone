@@ -32,13 +32,17 @@ export function Features({type}) {
             <span className='desc'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt corrupti debitis ex obcaecati dolorum nihil quae modi dolores nostrum esse a odit cum officiis, repellendus optio voluptas maiores? Molestiae, placeat.
             </span>
-            <div className='buttons'>
+            <div className='buttons' >
+
                 <button className='play'>
                     <img src="./icons/tocar.png" alt="" /><span>Reproducir</span>
                 </button>
+
+
                 <button className='more'>
                     <img src="./icons/informacion.png" alt="" /><span>Más información</span>
                 </button>
+
             </div>
         </div>
 

@@ -17,15 +17,19 @@ export function List({title}){
   const [movieList, setMovieList] = useState([]);
   const [isDataLoaded, setIsDataLoaded] = useState(false);//controla que se hallan cargado los datos para evitar errores
 
+//
   useEffect(() => {
-    fetchMovies().then(data => {
-      setMovieList(data);//guarda los datos tridos de la api
-      generateRandom(data.length)//obiente la cantidad de arrays de la api
-      setIsDataLoaded(true);//si los datos cargaron bien pasa ser verdadero
-
-    }).catch(error => {//error al traer la api
-      console.error('Error fetching movies:', error);
-    });
+    const fetchData = async () => {
+      try {
+        const data = await fetchMovies(); // Llama a la función fetchMovies para obtener la URL de la API
+        setMovieList(data);
+        generateRandom(data.length);
+        setIsDataLoaded(true);//si los datos cargaron bien pasa ser verdadero
+      } catch (error) {
+        console.error('Error fetching movies:', error);
+      }
+    };
+    fetchData();
   }, []);
 
   //random peliculas
@@ -87,7 +91,15 @@ export function List({title}){
           slidesToScroll: 3,
           initialSlide: 0
         }
-      }
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 0
+        }
+      },
     ]
   };
   
@@ -122,9 +134,9 @@ export function List({title}){
             </Slider> */}
         </div>
       </div>
-    )}
+      )}
     </>
-
+    
   );
 }
 
@@ -146,4 +158,3 @@ function SampleNextArrow(props) {
     </div>
   );
 }
-

@@ -196,3 +196,32 @@
 .options span:hover{
     text-decoration: underline;
 }
+
+@media screen and (max-width:1200px){
+    .navbar .menu-navigation li{
+        font-size: 13px;
+        font-weight: 400;
+    }
+}
+
+@media screen and (max-width:1150px){
+    .navbar .container .left img{
+        margin-right: 5px;
+    }
+}
+@media screen and (max-width:1000px){
+    .navbar .menu-navigation li{
+        font-size: 12px;
+        font-weight: 400;
+    }
+}
+@media screen and (max-width:950px){
+    .navbar .container .left img{
+        height: 19px;
+    }
+}
+@media screen and (max-width:880px){
+    .navbar .menu-navigation{
+        display: none;
+    }
+}
